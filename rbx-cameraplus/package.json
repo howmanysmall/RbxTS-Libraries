@@ -1,0 +1,18 @@
+{
+	"name": "rbx-cameraplus",
+	"version": "0.0.1",
+	"description": "An extension of the default Roblox camera made by Crazyman32, rewritten for TypeScript.",
+	"main": "init.lua",
+	"typings": "index.d.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/howmanysmall/RbxTS-Libraries/tree/master/rbx-cameraplus"
+	},
+	"keywords": ["cameraplus", "camera", "roblox", "crazyman32", "interpolation", "tween"],
+	"author": "Crazyman32/HowManySmall",
+	"license": "ISC",
+	"homepage": "https://github.com/howmanysmall/RbxTS-Libraries/blob/master/rbx-cameraplus/README.md"
+}
