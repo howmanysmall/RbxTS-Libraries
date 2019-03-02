@@ -54,8 +54,8 @@ local Deceleration = Bezier(0, 0, 0.2, 1)
 local sin, cos, pi, asin = math.sin, math.cos, math.pi, math.asin
 local _2pi = 2 * pi
 local _halfpi = 0.5 * pi
-local SoftSpringpi = -3.2*pi
-local Springpi = 2*SoftSpringpi
+local SoftSpringpi = -3.2 * pi
+local Springpi = 2 * SoftSpringpi
 
 local function Linear(t, b, c, d)
 	return c * t / d + b
@@ -63,34 +63,34 @@ end
 
 local function Smooth(t, b, c, d)
 	t = t / d
-	return c * t * t * (3 - 2*t) + b
+	return c * t * t * (3 - 2 * t) + b
 end
 
 local function Smoother(t, b, c, d)
 	t = t / d
-	return c*t*t*t * (t * (6*t - 15) + 10) + b
+	return c * t * t * t * (t * (6 * t - 15) + 10) + b
 end
 
 -- Arceusinator's Easing Functions
 local function RevBack(t, b, c, d)
 	t = 1 - t / d
-	return c*(1 - (sin(t*_halfpi) + (sin(t*pi) * (cos(t*pi) + 1)*0.5))) + b
+	return c * (1 - (sin(t * _halfpi) + (sin(t * pi) * (cos(t * pi) + 1) * 0.5))) + b
 end
 
 local function RidiculousWiggle(t, b, c, d)
 	t = t / d
-	return c*sin(sin(t*pi)*_halfpi) + b
+	return c * sin(sin(t * pi) * _halfpi) + b
 end
 
 -- YellowTide's Easing Functions
 local function Spring(t, b, c, d)
 	t = t / d
-	return (1 + (-2.72^(-6.9*t) * cos(Springpi*t))) * c + b
+	return (1 + (-2.72 ^ (-6.9 * t) * cos(Springpi * t))) * c + b
 end
 
 local function SoftSpring(t, b, c, d)
 	t = t / d
-	return (1 + (-2.72^(-7.5*t) * cos(SoftSpringpi*t))) * c + b
+	return (1 + (-2.72 ^ (-7.5 * t) * cos(SoftSpringpi * t))) * c + b
 end
 -- End of YellowTide's functions
 
@@ -112,9 +112,9 @@ end
 local function OutInQuad(t, b, c, d)
 	if t < d * 0.5 then
 		t = 2 * t / d
-		return -0.5 * c * t * (t - 2) + b
+		return -c * 0.5 * t * (t - 2) + b
 	else
-		t, c = ((t * 2) - d) / d, 0.5 * c
+		t, c = ((t * 2) - d) / d, c * 0.5
 		return c * t * t + b + c
 	end
 end
