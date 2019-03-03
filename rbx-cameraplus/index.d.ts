@@ -1,25 +1,25 @@
 declare interface Easers {
-	Linear: Function;
-	Standard: Function;
-	Deceleration: Function;
-	Acceleration: Function;
-	Sharp: Function;
-	Smooth: Function;
-	Smoother: Function;
-	RevBack: Function;
-	RidiculousWiggle: Function;
-	Spring: Function;
-	SoftSpring: Function;
-	Quad: Function;
-	Cubic: Function;
-	Quart: Function;
-	Quint: Function;
-	Sine: Function;
-	Expo: Function;
-	Circ: Function;
-	Elastic: Function;
-	Back: Function;
-	Bounce: Function;
+	Linear(t: number, b: number, c: number, d: number): number;
+	Standard(t: number, b: number, c: number, d: number): number;
+	Deceleration(t: number, b: number, c: number, d: number): number;
+	Acceleration(t: number, b: number, c: number, d: number): number;
+	Sharp(t: number, b: number, c: number, d: number): number;
+	Smooth(t: number, b: number, c: number, d: number): number;
+	Smoother(t: number, b: number, c: number, d: number): number;
+	RevBack(t: number, b: number, c: number, d: number): number;
+	RidiculousWiggle(t: number, b: number, c: number, d: number): number;
+	Spring(t: number, b: number, c: number, d: number): number;
+	SoftSpring(t: number, b: number, c: number, d: number): number;
+	Quad(t: number, b: number, c: number, d: number): number;
+	Cubic(t: number, b: number, c: number, d: number): number;
+	Quart(t: number, b: number, c: number, d: number): number;
+	Quint(t: number, b: number, c: number, d: number): number;
+	Sin(t: number, b: number, c: number, d: number): number;
+	Expo(t: number, b: number, c: number, d: number): number;
+	Circ(t: number, b: number, c: number, d: number): number;
+	Elastic(t: number, b: number, c: number, d: number, a: number, p: number): number;
+	Back(t: number, b: number, c: number, d: number, s?: number): number;
+	Bounce(t: number, b: number, c: number, d: number): number;
 }
 
 interface Ease {
