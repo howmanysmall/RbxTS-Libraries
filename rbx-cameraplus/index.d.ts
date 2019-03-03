@@ -1,25 +1,25 @@
-declare enum Easers {
-	Linear,
-	Standard,
-	Deceleration,
-	Acceleration,
-	Sharp,
-	Smooth,
-	Smoother,
-	RevBack,
-	RidiculousWiggle,
-	Spring,
-	SoftSpring,
-	Quad,
-	Cubic,
-	Quart,
-	Quint,
-	Sine,
-	Expo,
-	Circ,
-	Elastic,
-	Back,
-	Bounce
+declare interface Easers {
+	Linear: Function;
+	Standard: Function;
+	Deceleration: Function;
+	Acceleration: Function;
+	Sharp: Function;
+	Smooth: Function;
+	Smoother: Function;
+	RevBack: Function;
+	RidiculousWiggle: Function;
+	Spring: Function;
+	SoftSpring: Function;
+	Quad: Function;
+	Cubic: Function;
+	Quart: Function;
+	Quint: Function;
+	Sine: Function;
+	Expo: Function;
+	Circ: Function;
+	Elastic: Function;
+	Back: Function;
+	Bounce: Function;
 }
 
 interface Ease {
@@ -55,6 +55,18 @@ interface CameraPlus {
 	getRoll(): number;
 	incrementRoll(Delta: number): void;
 
+	IsA(ClassName: string): boolean;
+	SetPosition(Position: Vector3): void;
+	GetPosition(): Vector3;
+	SetFocus(Focus: Vector3): void;
+	SetView(Position: Vector3, Focus: Vector3): void;
+	SetFOV(FieldOfView: number): void;
+	GetFOV(): number;
+	IncrementFOV(Delta: number): void;
+	SetRoll(Roll: number): void;
+	GetRoll(): number;
+	IncrementRoll(Delta: number): void;
+
 	tween(StartCFrame: CFrame, EndCFrame: CFrame, Duration: number, EasingFunction: Function): void;
 	tweenTo(EndCFrame: CFrame, Duration: number, EasingFunction: Function): void;
 	tweenToPlayer(Duration: number, EasingFunction: Function): void;
@@ -65,6 +77,17 @@ interface CameraPlus {
 	tweenAll(StartCFrame: CFrame, EndCFrame: CFrame, StartFOV: number, EndFOV: number, StartRoll: number, EndRoll: number, Duration: number, EasingFunction: Function): void;
 	tweenToAll(EndCFrame: CFrame, EndFOV: number, EndRoll: number, Duration: number, EasingFunction: Function): void;
 	interpolate(EndPosition: Vector3, EndFocus: Vector3, Duration: number, EasingFunction: Function): void;
+
+	Tween(StartCFrame: CFrame, EndCFrame: CFrame, Duration: number, EasingFunction: Function): void;
+	TweenTo(EndCFrame: CFrame, Duration: number, EasingFunction: Function): void;
+	TweenToPlayer(Duration: number, EasingFunction: Function): void;
+	TweenFOV(StartFOV: number, EndFOV: number, Duration: number, EasingFunction: Function): void;
+	TweenToFOV(EndFOV: number, Duration: number, EasingFunction: Function): void;
+	TweenRoll(StartRoll: number, EndRoll: number, Duration: number, EasingFunction: Function): void;
+	TweenToRoll(EndRoll: number, Duration: number, EasingFunction: Function): void;
+	TweenAll(StartCFrame: CFrame, EndCFrame: CFrame, StartFOV: number, EndFOV: number, StartRoll: number, EndRoll: number, Duration: number, EasingFunction: Function): void;
+	TweenToAll(EndCFrame: CFrame, EndFOV: number, EndRoll: number, Duration: number, EasingFunction: Function): void;
+	Interpolate(EndPosition: Vector3, EndFocus: Vector3, Duration: number, EasingFunction: Function): void;
 }
 
 declare const CameraPlus: CameraPlus;
