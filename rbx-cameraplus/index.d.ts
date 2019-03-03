@@ -1,5 +1,4 @@
-declare enum Easers
-{
+declare enum Easers {
 	Linear,
 	Standard,
 	Deceleration,
@@ -23,16 +22,14 @@ declare enum Easers
 	Bounce
 }
 
-interface Ease
-{
+interface Ease {
 	In: Easers;
 	Out: Easers;
 	InOut: Easers;
 	OutIn: Easers;
 }
 
-interface CameraPlus
-{
+interface CameraPlus {
 	Ease: Ease;
 	Name: string;
 	CFrame: CFrame;
@@ -69,3 +66,6 @@ interface CameraPlus
 	tweenToAll(EndCFrame: CFrame, EndFOV: number, EndRoll: number, Duration: number, EasingFunction: Function): void;
 	interpolate(EndPosition: Vector3, EndFocus: Vector3, Duration: number, EasingFunction: Function): void;
 }
+
+declare const CameraPlus: CameraPlus;
+export = CameraPlus;
