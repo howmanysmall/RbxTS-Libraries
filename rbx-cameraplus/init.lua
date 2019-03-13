@@ -67,7 +67,7 @@ local function ReadOnly(Table)
 	local NewMeta = { }
 	NewMeta.__metatable = true
 	NewMeta.__index = Table
-	function NewMeta:__index() error("Cannot add to read-only table.", 0) end
+	function NewMeta:__newindex() error("Cannot add to read-only table.", 0) end
 	return setmetatable(NewTable, NewMeta)
 end
 
